@@ -48,6 +48,18 @@ const TinyEditor = ({ onChange, name, value, disabled }: TinyEditorProps) => {
             onEditorChange={(editorContent) => {
                 onChange({ target: { name, value: editorContent } });
             }}
+            onInit={(evt, editor) => {
+                if (pluginConfig?.data?.editorConfig?.onInit) {
+                    pluginConfig?.data?.editorConfig?.onInit(editor);
+                }
+
+                if (typeof window !== 'undefined' && pluginConfig?.data?.editorConfig?.setupFunctionName) {
+                    const setupFunction = window[pluginConfig?.data?.editorConfig?.setupFunctionName] as unknown as (editor: any) => void;
+                    if (typeof setupFunction === 'function') {
+                        setupFunction(editor);
+                    }
+                }
+            }}
             init={{
                 ...pluginConfig?.data?.editorConfig,
                 images_upload_handler: async (blobInfo) => {

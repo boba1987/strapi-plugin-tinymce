@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Box, Flex, Typography, Button } from "@strapi/design-system";
 import { Earth, Image } from "@strapi/icons";
 import { Editor } from "@tinymce/tinymce-react";
-import { P as PLUGIN_ID } from "./index-D7yEtLlQ.mjs";
+import { P as PLUGIN_ID } from "./index-Dbos3ASM.mjs";
 import { t as taskRequests } from "./settings-fMCe_BmS.mjs";
 import { useFetchClient, useStrapiApp } from "@strapi/strapi/admin";
 const prefixFileUrlWithBackendUrl = (path, defaultDomain = "http://localhost:1337") => {
@@ -52,7 +52,6 @@ const TinyEditor = ({ onChange, name, value, disabled }) => {
         onChange({ target: { name, value: editorContent } });
       },
       onInit: (evt, editor) => {
-        console.log(pluginConfig);
         if (pluginConfig?.data?.editorConfig?.onInit) {
           pluginConfig?.data?.editorConfig?.onInit(editor);
         }
@@ -62,7 +61,6 @@ const TinyEditor = ({ onChange, name, value, disabled }) => {
             setupFunction(editor);
           }
         }
-        console.log("HAHAHAHA 2");
       },
       init: {
         ...pluginConfig?.data?.editorConfig,
@@ -153,4 +151,4 @@ const Wysiwyg = ({ name, onChange, value, label, disabled, error, required, hint
 export {
   Wysiwyg as default
 };
-//# sourceMappingURL=Wysiwyg-AuWpdZXY.mjs.map
+//# sourceMappingURL=Wysiwyg-SvEcWcmK.mjs.map

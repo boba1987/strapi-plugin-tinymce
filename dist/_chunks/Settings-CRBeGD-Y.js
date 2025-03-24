@@ -6,7 +6,7 @@ const designSystem = require("@strapi/design-system");
 const admin = require("@strapi/strapi/admin");
 const icons = require("@strapi/icons");
 const reactIntl = require("react-intl");
-const index = require("./index-4X1ewlms.js");
+const index = require("./index-Dewwce7X.js");
 const settings = require("./settings-B3aKnT7M.js");
 const Settings = () => {
   const { toggleNotification } = admin.useNotification();
@@ -108,4 +108,4 @@ const Settings = () => {
   ] });
 };
 exports.default = Settings;
-//# sourceMappingURL=Settings-CTYoTXfi.js.map
+//# sourceMappingURL=Settings-CRBeGD-Y.js.map

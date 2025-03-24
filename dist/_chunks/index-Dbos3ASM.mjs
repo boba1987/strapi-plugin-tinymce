@@ -1,11 +1,8 @@
-"use strict";
-const react = require("react");
-const jsxRuntime = require("react/jsx-runtime");
-const styled = require("styled-components");
-const designSystem = require("@strapi/design-system");
-const icons = require("@strapi/icons");
-const _interopDefault = (e) => e && e.__esModule ? e : { default: e };
-const styled__default = /* @__PURE__ */ _interopDefault(styled);
+import { useRef, useEffect } from "react";
+import { jsx } from "react/jsx-runtime";
+import styled from "styled-components";
+import { Flex } from "@strapi/design-system";
+import { Paragraph } from "@strapi/icons";
 const __variableDynamicImportRuntimeHelper = (glob, path) => {
   const v = glob[path];
   if (v) {
@@ -32,7 +29,7 @@ const author = {
   url: "https://github.com/SKLINET"
 };
 const type = "commonjs";
-const exports$1 = {
+const exports = {
   "./package.json": "./package.json",
   "./strapi-admin": {
     types: "./dist/admin/src/index.d.ts",
@@ -112,7 +109,7 @@ const pluginPkg = {
   license,
   author,
   type,
-  exports: exports$1,
+  exports,
   files,
   scripts,
   dependencies,
@@ -125,8 +122,8 @@ const pluginPkg = {
 const PLUGIN_ID = pluginPkg.name.replace(/^(@sklinet\/strapi-)plugin-/i, "");
 const getTranslation = (id) => `${PLUGIN_ID}.${id}`;
 const Initializer = ({ setPlugin }) => {
-  const ref = react.useRef(setPlugin);
-  react.useEffect(() => {
+  const ref = useRef(setPlugin);
+  useEffect(() => {
     ref.current(PLUGIN_ID);
   }, []);
   return null;
@@ -148,7 +145,7 @@ const pluginPermissions = {
   "menu-link": [{ action: "plugin::tinymce.menu-link", subject: null }],
   settings: [{ action: "plugin::tinymce.settings.read", subject: null }]
 };
-const IconBox = styled__default.default(designSystem.Flex)`
+const IconBox = styled(Flex)`
     background-color: #f0f0ff; /* primary100 */
     border: 1px solid #d9d8ff; /* primary200 */
 
@@ -157,7 +154,7 @@ const IconBox = styled__default.default(designSystem.Flex)`
     }
 `;
 const PluginIcon = () => {
-  return /* @__PURE__ */ jsxRuntime.jsx(IconBox, { justifyContent: "center", alignItems: "center", width: 7, height: 6, hasRadius: true, "aria-hidden": true, children: /* @__PURE__ */ jsxRuntime.jsx(icons.Paragraph, {}) });
+  return /* @__PURE__ */ jsx(IconBox, { justifyContent: "center", alignItems: "center", width: 7, height: 6, hasRadius: true, "aria-hidden": true, children: /* @__PURE__ */ jsx(Paragraph, {}) });
 };
 const name = pluginPkg.strapi.name;
 const index = {
@@ -191,10 +188,10 @@ const index = {
         ]
       },
       components: {
-        Input: async () => Promise.resolve().then(() => require(
+        Input: async () => import(
           /* webpackChunkName: "video-field-input-component" */
-          "./Wysiwyg-BhqJ7p8l.js"
-        ))
+          "./Wysiwyg-SvEcWcmK.mjs"
+        )
       }
     });
     app.createSettingSection(
@@ -214,7 +211,7 @@ const index = {
           id: "settings",
           to: `/settings/${PLUGIN_ID}`,
           Component: async () => {
-            return Promise.resolve().then(() => require("./Settings-CTYoTXfi.js"));
+            return import("./Settings-DXk2nDlW.mjs");
           },
           permissions: pluginPermissions["settings"]
         }
@@ -233,7 +230,7 @@ const index = {
     const { locales } = app;
     const importedTranslations = await Promise.all(
       locales.map((locale) => {
-        return __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "./translations/cs.json": () => Promise.resolve().then(() => require("./cs-4ldo0hfI.js")), "./translations/en.json": () => Promise.resolve().then(() => require("./en-usAdfkfH.js")), "./translations/sk.json": () => Promise.resolve().then(() => require("./sk-BcD0BjAU.js")) }), `./translations/${locale}.json`).then(({ default: data }) => {
+        return __variableDynamicImportRuntimeHelper(/* @__PURE__ */ Object.assign({ "./translations/cs.json": () => import("./cs-D-gwbfRH.mjs"), "./translations/en.json": () => import("./en-BILT6xrd.mjs"), "./translations/sk.json": () => import("./sk-D3I3bI3P.mjs") }), `./translations/${locale}.json`).then(({ default: data }) => {
           return {
             data: prefixPluginTranslations(data, PLUGIN_ID),
             locale
@@ -249,7 +246,9 @@ const index = {
     return importedTranslations;
   }
 };
-exports.PLUGIN_ID = PLUGIN_ID;
-exports.getTranslation = getTranslation;
-exports.index = index;
-//# sourceMappingURL=index-4X1ewlms.js.map
+export {
+  PLUGIN_ID as P,
+  getTranslation as g,
+  index as i
+};
+//# sourceMappingURL=index-Dbos3ASM.mjs.map

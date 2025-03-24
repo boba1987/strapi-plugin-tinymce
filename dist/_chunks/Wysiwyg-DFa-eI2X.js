@@ -5,7 +5,7 @@ const react = require("react");
 const designSystem = require("@strapi/design-system");
 const icons = require("@strapi/icons");
 const tinymceReact = require("@tinymce/tinymce-react");
-const index = require("./index-4X1ewlms.js");
+const index = require("./index-Dewwce7X.js");
 const settings = require("./settings-B3aKnT7M.js");
 const admin = require("@strapi/strapi/admin");
 const prefixFileUrlWithBackendUrl = (path, defaultDomain = "http://localhost:1337") => {
@@ -54,7 +54,6 @@ const TinyEditor = ({ onChange, name, value, disabled }) => {
         onChange({ target: { name, value: editorContent } });
       },
       onInit: (evt, editor) => {
-        console.log(pluginConfig);
         if (pluginConfig?.data?.editorConfig?.onInit) {
           pluginConfig?.data?.editorConfig?.onInit(editor);
         }
@@ -64,7 +63,6 @@ const TinyEditor = ({ onChange, name, value, disabled }) => {
             setupFunction(editor);
           }
         }
-        console.log("HAHAHAHA 2");
       },
       init: {
         ...pluginConfig?.data?.editorConfig,
@@ -153,4 +151,4 @@ const Wysiwyg = ({ name, onChange, value, label, disabled, error, required, hint
   ] });
 };
 exports.default = Wysiwyg;
-//# sourceMappingURL=Wysiwyg-BhqJ7p8l.js.map
+//# sourceMappingURL=Wysiwyg-DFa-eI2X.js.map

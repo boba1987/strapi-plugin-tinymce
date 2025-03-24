@@ -4,7 +4,7 @@ import { Box, Flex, Typography, Button, Loader, Field } from "@strapi/design-sys
 import { useNotification } from "@strapi/strapi/admin";
 import { Check } from "@strapi/icons";
 import { useIntl } from "react-intl";
-import { g as getTranslation } from "./index-D7yEtLlQ.mjs";
+import { g as getTranslation } from "./index-Dbos3ASM.mjs";
 import { t as taskRequests } from "./settings-fMCe_BmS.mjs";
 const Settings = () => {
   const { toggleNotification } = useNotification();
@@ -108,4 +108,4 @@ const Settings = () => {
 export {
   Settings as default
 };
-//# sourceMappingURL=Settings-BqF-pIoz.mjs.map
+//# sourceMappingURL=Settings-DXk2nDlW.mjs.map

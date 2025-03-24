@@ -1,6 +1,7 @@
 <h1 align="center">Strapi plugin TinyMCE</h1>
 
 <p align="center">Replaces the default Strapi WYSIWYG editor with a customized build of TinyMCE editor.</p>
+<p align="center">co-authored by boba1987</p>
 
 ## 👋 Intro
 
